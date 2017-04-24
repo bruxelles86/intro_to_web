@@ -20,7 +20,12 @@ get '/better_cats' do
   send_file 'cats.html'
 end
 
-get '/cats' do
+get '/random_cat' do
   @cat_name = ["Amigo", "Oscar", "Viking", "*chika chika* Slim Shady"].sample
+  erb(:index)
+end
+
+get '/named_cat' do
+  @cat_name = params[:name]
   erb(:index)
 end
